@@ -1,8 +1,7 @@
 <?php
 
-//require_once("db.php");
+require_once("db.php");
 require_once("task.php");
-
 $post = getTask($link);
 
 ?>
@@ -38,29 +37,17 @@ $post = getTask($link);
 
         <!-- задачи -->
         <div class="list-group justify-content-center">
-            <a href="#" class="list-group-item list-group-item-action active">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><?php echo $post["name"]; ?></h5>
-                <small><?php echo $post["status_task"]; ?></small>
-              </div>
-              <p class="mb-1"><?php echo $post["task_text"]; ?></small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small class="text-muted">3 days ago</small>
-              </div>
-              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-              <small class="text-muted">Donec id elit non mi porta.</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small class="text-muted">3 days ago</small>
-              </div>
-              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-              <small class="text-muted">Donec id elit non mi porta.</small>
-            </a>
+            <?php
+            for($i = 0; $i < count($post); $i++) {
+              //сохранение значений
+              $name = $post[$i]['name'];
+              $text = $post[$i]['task_text'];
+              $status = $post[$i]['status_task'];
+              $author = $post[$i]['author'];
+              //вывод задач
+              include "show.php";
+            }
+            ?>
           </div>
           <!-- / .list-group .justify-content-center -->
 
