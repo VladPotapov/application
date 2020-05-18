@@ -6,6 +6,7 @@ function add_task($link, $name, $text, $author, $email) {
     mysqli_query($link, $sql);
 }
 
+//сохранение строк таблицы в массив
 function getTask($link) {
     $arr = [];
     $query = "SELECT * FROM `tasks`";
@@ -20,5 +21,6 @@ function getTask($link) {
 function item_task($item) {
     echo $item;
 }
+
 
 ?>

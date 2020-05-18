@@ -2,8 +2,8 @@
 
 require_once("db.php");
 require_once("task.php");
-$post = getTask($link);
 
+$post = getTask($link);
 ?>
 
 <!doctype html>
@@ -24,13 +24,19 @@ $post = getTask($link);
         <!-- сортировка -->
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a href="" class="nav-link">По имени</a>
+                <a href="#" class="nav-link">
+                  По имени
+                </a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">По e-mail</a>
+                <a href="#" class="nav-link">
+                  По e-mail
+                </a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">По статусу</a>
+                <a href="#" class="nav-link">
+                  По статусу
+                </a>
             </li>
         </ul>
         <!-- /.nav justify-content-center -->
@@ -38,7 +44,8 @@ $post = getTask($link);
         <!-- задачи -->
         <div class="list-group justify-content-center">
             <?php
-            for($i = 0; $i < count($post); $i++) {
+            $len = 3;
+            for($i = 0; $i < $len; $i++) {
               //сохранение значений
               $name = $post[$i]['name'];
               $text = $post[$i]['task_text'];

@@ -1,4 +1,3 @@
-<?php require_once("task.php"); ?>
 <a href="#" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1"><?php item_task($name); ?></h5>
