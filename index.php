@@ -2,6 +2,7 @@
 
 require_once("db.php");
 require_once("task.php");
+require_once("sorts.php");
 
 $post = getTask($link);
 ?>
@@ -24,17 +25,17 @@ $post = getTask($link);
         <!-- сортировка -->
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="index.php?sort=sort_name" onclick="<?php usort($post, $_GET['sort']); ?>" class="nav-link">
                   По имени
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="index.php?sort=sort_email" onclick="<?php usort($post, $_GET['sort']); ?>" class="nav-link">
                   По e-mail
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="index.php?sort=sort_status" onclick="<?php usort($post, $_GET['sort']); ?>" class="nav-link">
                   По статусу
                 </a>
             </li>
